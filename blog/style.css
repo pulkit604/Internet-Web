@@ -1,10 +1,13 @@
-	body{background:#ecedd7;width:100%;height:100%;}
+body{
+
+    
+background:#ecedd7;width:100%;height:100%;}
 	
 	#title{text-align:center;}
 	
 	#main-title{background:#c5d5ce;}
 	
-	section{border-top:1px ridge brown;clear:left;padding-bottom:100px;}
+	section{border-top:1px ridge brown;clear:left;padding-bottom:103.4px;}
 	
 	
 	
@@ -16,8 +19,6 @@
 	article{float:left;}
 	
 	
-	aside{float:right;width:14%;background:#e4e4e4;text-align:center;height:900px;}
+	aside{float:right;width:14%;background:rgba(253, 76, 76, 0.21);text-align:center;height:900px;}
 	
 	img{margin-right:5px;margin-left:22px;}
-	
-	
