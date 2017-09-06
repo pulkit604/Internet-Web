@@ -1,15 +1,26 @@
 <!doctype HTML>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type='text/javascript' src='http://3dinterio.com/wp-content/themes/sydney/js/velocity.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://3dinterio.com/wp-content/themes/sydney/js/velocity.ui.js?ver=4.7.5'></script>
+
 
 <title>Javascript</title>
 <style>
-body{text-align:center;background: antiquewhite;color:#b78b50;}
+body{text-align:center;background: black;color:#b78b50;}
 *{margin-top:3%;}
 
 </style>
 </head>
 <body>
+
+<img id="i1" src="c.jpg" width="10%" class="loader" style="top: 0;left: 0;position:absolute;">
+<img id="i2" src="s.jpg" width="10%" class="loader"  style="top: 0;right:0;position:absolute;" >
+<img id="i3" src="r.png" width="10%" class="loader" style="bottom: 0;left:0;position:absolute;">
+<img id="i4" src="t.png" width="10%" class="loader" style="position:absolute;bottom: 0;right: 0;">
+<div id="main" style="display:none;">
 <h3>Select a Shape</h3>
 <form id="f">
 <input required type="radio"  name="shape" value ="c" onclick="c()">Circle
@@ -18,7 +29,9 @@ body{text-align:center;background: antiquewhite;color:#b78b50;}
 <input required type="radio"  name="shape" value ="r" onclick="r()">Rectangle 
 </form>
 <br>	
-<img id="i" src="" width="10%">
+<canvas id="i" width="200" height="200"></canvas>
+
+<!--<img id="i" src="" width="10%">-->
 <div id="optc" style="display:none;">
 <input required type="text" id="radius" placeholder="Enter Radius:" > 
 <button  id="submitc">submit</button> 
@@ -43,15 +56,41 @@ body{text-align:center;background: antiquewhite;color:#b78b50;}
 <button  id="submitr">submit</button> 
 </div>
  
+</div>
 
 
+<script>
+$("#i1").velocity({
+properties:{translateX:$(window).innerHeight()/2,translateY:$(window).innerHeight()/2,easing:"swing"},options:{duration:2500}   	
+});
+$("#i2").velocity({
+properties:{translateX:-$(window).innerWidth()/2,translateY:$(window).innerHeight()/2,easing:"swing"},options:{duration:2500}   	
+});
+$("#i3").velocity({
+properties:{translateX:$(window).innerHeight()/2,translateY:-$(window).innerHeight()/2,easing:"swing"},options:{duration:2500}   	
+});
+$("#i4").velocity({
+properties:{translateX:-$(window).innerWidth()/2,translateY:-$(window).innerHeight()/2,easing:"swing"},options:{duration:2500}   	
+});
+$(".loader").velocity("callout.swing",2000);
+setTimeout(function(){$(".loader").velocity("transition.fadeOut");$("body").css("background","antiquewhite");$("#main").velocity("transition.shrinkIn");
+},4500);
+
+
+
+</script>
 
 
 <script type="text/javascript">
 
 
 function c(){
-document.getElementById("i").src="c.jpg";
+var ctx = document.getElementById("i").getContext("2d");
+ctx.clearRect(0, 0, document.getElementById("i").width, document.getElementById("i").height);
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
 document.getElementById("optc").style.display="block";
 document.getElementById("optt").style.display="none";
 document.getElementById("opts").style.display="none";	
@@ -61,8 +100,15 @@ document.getElementById("optr").style.display="none";
 }
 
 function t(){
+var ctx = document.getElementById("i").getContext("2d");
+ctx.clearRect(0, 0, document.getElementById("i").width, document.getElementById("i").height);
+ctx.beginPath();
+  ctx.moveTo(120, 0);
+    ctx.lineTo(100, 80); 
+    ctx.lineTo(70, 80); 
+    ctx.closePath(); 
+    ctx.stroke();
 
-document.getElementById("i").src="t.png";
 document.getElementById("optt").style.display="block";
 document.getElementById("opts").style.display="none";	
 document.getElementById("optr").style.display="none";
@@ -73,8 +119,10 @@ document.getElementById("optc").style.display="none";
 }
 
 function s(){
+var ctx = document.getElementById("i").getContext("2d");
+ctx.clearRect(0, 0, document.getElementById("i").width, document.getElementById("i").height);
+ctx.strokeRect(10, 10, 100, 100);
 
-document.getElementById("i").src="s.jpg";
 document.getElementById("opts").style.display="block";	
 document.getElementById("optr").style.display="none";
 document.getElementById("optt").style.display="none";
@@ -86,7 +134,9 @@ document.getElementById("optc").style.display="none";
 
 function r(){
 
-document.getElementById("i").src="r.png";
+var ctx = document.getElementById("i").getContext("2d");
+ctx.clearRect(0, 0, document.getElementById("i").width, document.getElementById("i").height);
+ctx.strokeRect(10, 10, 50, 100);
 document.getElementById("optr").style.display="block";
 document.getElementById("opts").style.display="none";	
 document.getElementById("optt").style.display="none";
