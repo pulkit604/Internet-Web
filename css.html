@@ -1,0 +1,143 @@
+<!doctype HTML>
+<html>
+<head>
+<title> Css Properties</title>
+<style>
+body{background-color:#e6ece0;}
+*{text-align:center;}
+table{border:2px dashed aqua;}
+td{border:1px inset brown;}
+.n{cursor:pointer;}
+.p{
+opacity:0;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type='text/javascript' src='http://3dinterio.com/wp-content/themes/sydney/js/velocity.min.js?ver=4.7.5'></script>
+<script type='text/javascript' src='http://3dinterio.com/wp-content/themes/sydney/js/velocity.ui.js?ver=4.7.5'></script>
+
+</head>
+<body>
+<h2>CSS Properties</h2>
+<h4>Listed Below are the CSS properties and their function </h4>
+<table>
+<caption>
+CSS Properties and their Functions. Click on a property -> 
+</caption>
+<tr>
+<th>
+Propery Name
+</th><th>
+Function
+</th>
+</tr>
+<tr>
+<td class="n">
+background-color
+</td>
+<td class="p">Used to change the background color of an element like div,section,span,etc
+</td>
+</tr>
+<tr>
+<td class="n">
+background-image
+</td>
+<td class="p">Used to apply an image as the background an element like div,section,span,etc
+</td>
+</tr>
+<tr>
+<td class="n">
+border
+</td>
+<td class="p">Used to apply a border to an element like div,section,span,etc It takes width,type and color as argments
+</td>
+</tr>
+<tr>
+<td class="n">color</td>
+<td class="p">Used to change the color of the text</td>
+</tr>
+
+<tr>
+<td class="n">text-align</td>
+<td class="p">Used to change the alignement of the text ie, left,center,right or justify </td>
+</tr>
+
+<tr>
+<td class="n">box-shadow</td>
+<td class="p">Used to apply a shadow in the x &  y direction to an element	</td>
+</tr>
+
+<tr>
+<td class="n">font-weight</td>
+<td class="p">Used to change the boldness of the text</td>
+</tr>
+
+<tr>
+<td class="n">border-radius</td>
+<td class="p">Used to change the radius of an element in order to change its angle</td>
+</tr>
+
+<tr>
+<td class="n">margin</td>
+<td class="p">Used to set the margin of an element for any direction</td>
+</tr>
+
+<tr>
+<td class="n">display</td>
+<td class="p">Used to apply different styles in which an element is displayed i.e, none,block,flex etc. </td>
+</tr>
+
+<tr>
+<td class="n">width</td>
+<td class="p">Used to change the width of an element</td>
+</tr>
+
+
+<tr>
+<td class="n">float</td>
+<td class="p">Used to make an element remain aligned at a position</td>
+</tr>
+
+<tr>
+<td class="n">padding</td>
+<td class="p">Used to provide spacing to an element</td>
+</tr>
+
+
+
+
+
+</table>
+
+<script>
+$("body").velocity("transition.perspectiveUpIn",2000);
+
+
+$(".n").click(function(){
+$(this).velocity({"color":"#6495ed"});
+$(this).velocity("callout.tada");
+$(this).parent().find(".p").velocity("transition.perspectiveDownIn",2000);
+
+
+
+
+
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
